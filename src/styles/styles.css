@@ -157,6 +157,10 @@ button {
   margin: auto;
 }
 
+.error-main {
+  margin: auto;
+}
+
 @media (max-width: 700px) {
   .city-degr,
   .additional,

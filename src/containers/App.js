@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { fetchWeather, fetchWeatherByCoord } from "../actions/actions";
-import { BallBeat } from "react-pure-loaders";
+import { fetchWeatherByCoord } from "../actions/actions";
 import { BeatLoader } from "react-spinners";
 import MainView from "../components/MainView";
-import Loading from "../components/Loading";
-import SecondaryView from "../components/SecondaryView";
-import AddToFavForm from "../components/AddToFavForm";
-import { FavRedux } from "./FavContainer";
 import Error from "../components/Error";
+import SecondaryView from "../components/SecondaryView";
 import "../styles/styles.css";
 
 class App extends Component {
@@ -20,14 +16,18 @@ class App extends Component {
     this.updGeo = this.updGeo.bind(this);
   }
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoFail);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoFail);
+    } else {
+      this.geoFail();
+    }
   }
 
   geoSuccess(pos) {
     this.props.fetchWeatherByCoord(pos.coords.latitude, pos.coords.longitude);
   }
 
-  geoFail(err) {
+  geoFail() {
     this.props.fetchWeatherByCoord(35.68, 139.76);
   }
 
@@ -47,11 +47,15 @@ class App extends Component {
         <div className="header">
           <button onClick={this.updGeo}>upd geolocation</button>
         </div>
-        {this.isNotEmpty(data.mainCityData) || isLoading ? (
+        {this.isNotEmpty(data.mainCityData) ||
+        isLoading ||
+        errorMessage !== "" ? (
           isLoading === true ? (
             <div className="loading">
               <BeatLoader className="loading" loading={isLoading} />
             </div>
+          ) : errorMessage !== "" ? (
+            <Error />
           ) : (
             <div className="main-city-part">
               <MainView data={data.mainCityData} />
@@ -66,37 +70,6 @@ class App extends Component {
         )}
       </div>
     );
-
-    // let data = this.props.data;
-    // return (
-    //   <div className="container">
-    //     <div className="header">
-    //       <button onClick={this.updGeo}>upd geolocation</button>
-    //     </div>
-    //     {Object.keys(data).length > 0 && data.constructor === Object ? (
-    //       <div className="main-view">
-    //         <MainView name={data.name} temp={data.main.temp} />
-    //         <SecondaryView
-    //           wind={data.wind.speed}
-    //           clouds={data.weather[0].description}
-    //           pressure={data.main.pressure}
-    //           humidity={data.main.humidity}
-    //           lon={data.coord.lon}
-    //           lat={data.coord.lat}
-    //         />
-    //       </div>
-    //     ) : (
-    //       <Loading />
-    //     )}
-    {
-      /* <AddToFavForm fetchWeather={this.props.fetchWeather} />
-        <div className="fav-containers">
-          <FavRedux case={0} />
-          <FavRedux case={1} />
-        </div> */
-    }
-    //   </div>
-    // );
   }
 }
 
