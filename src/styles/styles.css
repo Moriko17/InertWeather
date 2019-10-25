@@ -149,6 +149,13 @@ button {
   margin-left: 0;
   padding: 3px;
 }
+.main-city-part {
+  display: flex;
+}
+
+.loading {
+  margin: auto;
+}
 
 @media (max-width: 700px) {
   .city-degr,
