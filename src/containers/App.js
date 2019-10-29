@@ -7,6 +7,8 @@ import MainView from "../components/MainView";
 import Error from "../components/Error";
 import SecondaryView from "../components/SecondaryView";
 import "../styles/styles.css";
+import { FavRedux } from "./FavContainer";
+import FavoriteManager from "./FavoriteManager";
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +43,7 @@ class App extends Component {
 
   render() {
     let { data, isLoading, errorMessage } = this.props;
+    console.log(data);
 
     return (
       <div className="container">
@@ -68,6 +71,7 @@ class App extends Component {
             <SecondaryView case="void" />
           </div>
         )}
+        {/* <FavoriteManager /> */}
       </div>
     );
   }
