@@ -5,19 +5,7 @@ class App extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <button
-          onClick={() =>
-            this.props.fetchWeatherByCoord(
-              {
-                lat: 35.68,
-                lon: 139.76
-              },
-              0
-            )
-          }
-        >
-          +
-        </button>
+        <button onClick={() => this.props.fetchWeatherByCoord()}>+</button>
       </div>
     );
   }
