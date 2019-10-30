@@ -6,7 +6,6 @@ import {
   fetchWeatherFail
 } from "../store/actions/actions";
 import App from "../components/App";
-import { getMainCity } from "../store/reducers/weatherReducer";
 
 const fetchWeather = (dispatch, coord, id) => {
   const API_KEY = "6f49e4f6bef37c3172dac3cae65a0ae6";
@@ -50,7 +49,7 @@ export const fetchWeatherByCoord = () => {
 };
 
 const mapStateToProps = state => ({
-  mainCity: getMainCity(state.weather)
+  mainCity: state.mainWeather
 });
 
 const mapDispatchToProps = dispatch => ({

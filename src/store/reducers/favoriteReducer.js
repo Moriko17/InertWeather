@@ -1,18 +1,22 @@
 import * as actions from "../actions/actionTypes";
 
 export const initialState = {
-  mainCity: { id: 0 }
+  favoriteData: {
+    cities: [],
+    lastUsedId: -1
+  }
 };
 
-export function weatherReducer(state = initialState.mainCity, action) {
+export function favoriteReducer(state = initialState.favoriteData, action) {
+  let newFavoriteCities = [];
   switch (action.type) {
-    case actions.FETCH_WEATHER_START:
+    case actions.FETCH_FAVORITE_WEATHER_START:
       return {
         ...state,
         isLoading: true,
         errorMessage: ""
       };
-    case actions.FETCH_WEATHER_SUCCESS: {
+    case actions.FETCH_FAVORITE_WEATHER_SUCCESS: {
       const fetchedData = {
         cityName: action.payload.fetchedData.name,
         temp: action.payload.fetchedData.main.temp,
@@ -31,11 +35,24 @@ export function weatherReducer(state = initialState.mainCity, action) {
         fetchedData: fetchedData
       };
     }
-    case actions.FETCH_WEATHER_FAIL:
+    case actions.FETCH_FAVORITE_WEATHER_FAIL:
       return {
         ...state,
         isLoading: false,
         errorMessage: action.payload.errorCode
+      };
+    case actions.ADD_FAVORITE_CITY:
+      newFavoriteCities = [
+        ...state.cities,
+        {
+          id: state.lastUsedId + 1,
+          cityName: action.payload.cityName
+        }
+      ];
+      return {
+        ...state,
+        cities: newFavoriteCities,
+        lastUsedId: state.lastUsedId + 1
       };
     default:
       return state;

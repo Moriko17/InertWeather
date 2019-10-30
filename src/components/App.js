@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/styles.css";
 import CityDegrMainView from "./CityDegrMainView";
 import SideDataMainView from "./SideDataMainView";
+import AddToFavoriteContainer from "../containers/AddToFavoriteContainer";
 
 class App extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <SideDataMainView />
           </div>
         )}
+        <AddToFavoriteContainer />
       </div>
     );
   }

@@ -17,3 +17,10 @@ export const fetchWeatherFail = (error, id) => {
     payload: { errorCode: error, id }
   };
 };
+
+export const addCity = cityName => {
+  return {
+    type: types.ADD_FAVORITE_CITY,
+    payload: { cityName }
+  };
+};
