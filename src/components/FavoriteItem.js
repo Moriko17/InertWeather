@@ -2,10 +2,14 @@ import React from "react";
 import "../styles/styles.css";
 
 class FavoriteItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props.fetchWeather(this.props.city.cityName, this.props.city.id);
+  }
   render() {
     const { city } = this.props;
     return (
-      <div>
+      <div key={city.id}>
         <div>
           <div>
             <p>{city.cityName}</p>
@@ -16,9 +20,9 @@ class FavoriteItem extends React.Component {
             city.isLoading ? (
               <p>Loading</p>
             ) : (
-              <p>Error</p>
+              <p>{city.errorMessage}</p>
             )
-          ) : (
+          ) : city.fetchedData ? (
             <div>
               <div className="favorite-q">
                 <p>Wind:</p>
@@ -28,15 +32,17 @@ class FavoriteItem extends React.Component {
                 <p>Coord:</p>
               </div>
               <div className="favorite-a">
-                <p>{city.wind} m/s</p>
-                <p>{city.cloudState}</p>
-                <p>{(city.pressure * 0.750062).toFixed(0)} mmHg</p>
-                <p>{city.humidity} %</p>
+                <p>{city.fetchedData.wind} m/s</p>
+                <p>{city.fetchedData.cloudState}</p>
+                <p>{(city.fetchedData.pressure * 0.750062).toFixed(0)} mmHg</p>
+                <p>{city.fetchedData.humidity} %</p>
                 <p>
-                  [{city.coord.lat}, {city.coord.lon}]
+                  [{city.fetchedData.coord.lat}, {city.fetchedData.coord.lon}]
                 </p>
               </div>
             </div>
+          ) : (
+            false
           )}
         </div>
       </div>

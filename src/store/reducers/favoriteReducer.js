@@ -11,10 +11,14 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
   let newFavoriteCities = [];
   switch (action.type) {
     case actions.FETCH_FAVORITE_WEATHER_START:
+      newFavoriteCities = state.cities.map(city =>
+        city.id === action.payload.id
+          ? { ...city, isLoading: true, errorMessage: "" }
+          : city
+      );
       return {
         ...state,
-        isLoading: true,
-        errorMessage: ""
+        cities: newFavoriteCities
       };
     case actions.FETCH_FAVORITE_WEATHER_SUCCESS: {
       const fetchedData = {
@@ -29,17 +33,29 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
           lon: action.payload.fetchedData.coord.lon
         }
       };
+      newFavoriteCities = state.cities.map(city =>
+        city.id === action.payload.id
+          ? { ...city, isLoading: false, fetchedData: fetchedData }
+          : city
+      );
       return {
         ...state,
-        isLoading: false,
-        fetchedData: fetchedData
+        cities: newFavoriteCities
       };
     }
     case actions.FETCH_FAVORITE_WEATHER_FAIL:
+      newFavoriteCities = state.cities.map(city =>
+        city.id === action.payload.id
+          ? {
+              ...city,
+              isLoading: false,
+              errorMessage: action.payload.errorCode
+            }
+          : city
+      );
       return {
         ...state,
-        isLoading: false,
-        errorMessage: action.payload.errorCode
+        cities: newFavoriteCities
       };
     case actions.ADD_FAVORITE_CITY:
       newFavoriteCities = [
