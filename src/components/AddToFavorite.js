@@ -11,7 +11,6 @@ class AddToFavorite extends React.Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state.term);
     this.props.addCity(this.state.term);
     this.setState({ term: "" });
   }

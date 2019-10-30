@@ -1,22 +1,31 @@
 import * as types from "./actionTypes";
 
-export const fetchWeatherStart = id => {
-  return { type: types.FETCH_WEATHER_START, payload: { id } };
-};
+export const fetchWeatherStart = id =>
+  id === 0
+    ? { type: types.FETCH_WEATHER_START, payload: { id } }
+    : { type: types.FETCH_FAVORITE_WEATHER_START, payload: { id } };
 
-export const fetchWeatherSuccess = (fetchedData, id) => {
-  return {
-    type: types.FETCH_WEATHER_SUCCESS,
-    payload: { fetchedData, id }
-  };
-};
+export const fetchWeatherSuccess = (fetchedData, id) =>
+  id === 0
+    ? {
+        type: types.FETCH_WEATHER_SUCCESS,
+        payload: { fetchedData, id }
+      }
+    : {
+        type: types.FETCH_FAVORITE_WEATHER_SUCCESS,
+        payload: { fetchedData, id }
+      };
 
-export const fetchWeatherFail = (error, id) => {
-  return {
-    type: types.FETCH_WEATHER_FAIL,
-    payload: { errorCode: error, id }
-  };
-};
+export const fetchWeatherFail = (error, id) =>
+  id === 0
+    ? {
+        type: types.FETCH_WEATHER_FAIL,
+        payload: { errorCode: error, id }
+      }
+    : {
+        type: types.FETCH_FAVORITE_WEATHER_FAIL,
+        payload: { errorCode: error, id }
+      };
 
 export const addCity = cityName => {
   return {

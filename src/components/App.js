@@ -3,6 +3,7 @@ import "../styles/styles.css";
 import CityDegrMainView from "./CityDegrMainView";
 import SideDataMainView from "./SideDataMainView";
 import AddToFavoriteContainer from "../containers/AddToFavoriteContainer";
+import FavoriteContainer from "../containers/FavoriteContainer";
 
 class App extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class App extends React.Component {
           </div>
         )}
         <AddToFavoriteContainer />
+        <FavoriteContainer />
       </div>
     );
   }
