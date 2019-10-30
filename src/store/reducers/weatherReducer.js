@@ -20,10 +20,10 @@ export function weatherReducer(state = initialState.mainCity, action) {
         cloudState: action.payload.fetchedData.weather[0].description,
         pressure: action.payload.fetchedData.main.pressure,
         humidity: action.payload.fetchedData.main.humidity,
-        coord: [
-          action.payload.fetchedData.coord.lat,
-          action.payload.fetchedData.coord.lon
-        ]
+        coord: {
+          lat: action.payload.fetchedData.coord.lat,
+          lon: action.payload.fetchedData.coord.lon
+        }
       };
       return {
         ...state,
