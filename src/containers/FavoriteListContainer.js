@@ -2,10 +2,11 @@ import { connect } from "react-redux";
 import {
   fetchWeatherStart,
   fetchWeatherSuccess,
-  fetchWeatherFail
+  fetchWeatherFail,
+  deleteCity
 } from "../store/actions/actions";
 import axios from "axios";
-import Favorite from "../components/Favorite";
+import FavoriteList from "../components/FavoriteList";
 
 export const fetchWeather = (cityName, id) => {
   return dispatch => {
@@ -33,10 +34,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchWeather: (cityName, id) => dispatch(fetchWeather(cityName, id))
+  fetchWeather: (cityName, id) => dispatch(fetchWeather(cityName, id)),
+  deleteCity: id => dispatch(deleteCity(id))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Favorite);
+)(FavoriteList);

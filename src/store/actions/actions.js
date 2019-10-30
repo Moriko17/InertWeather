@@ -33,3 +33,10 @@ export const addCity = cityName => {
     payload: { cityName }
   };
 };
+
+export const deleteCity = id => {
+  return {
+    type: types.DELETE_FAVORITE_CITY,
+    payload: { id }
+  };
+};

@@ -3,7 +3,7 @@ import * as actions from "../actions/actionTypes";
 export const initialState = {
   favoriteData: {
     cities: [],
-    lastUsedId: -1
+    lastUsedId: 0
   }
 };
 
@@ -46,13 +46,23 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
         ...state.cities,
         {
           id: state.lastUsedId + 1,
-          cityName: action.payload.cityName
+          cityName: action.payload.cityName,
+          errorMessage: "",
+          isLoading: false
         }
       ];
       return {
         ...state,
         cities: newFavoriteCities,
         lastUsedId: state.lastUsedId + 1
+      };
+    case actions.DELETE_FAVORITE_CITY:
+      newFavoriteCities = state.cities.filter(
+        city => city.id !== action.payload.id
+      );
+      return {
+        ...state,
+        cities: newFavoriteCities
       };
     default:
       return state;
