@@ -9,6 +9,7 @@ class FavoriteList extends React.Component {
       <div>
         {this.props.favoriteData.cities.map(city => (
           <FavoriteItem
+            key={city.id}
             city={city}
             deleteCity={this.props.deleteCity}
             fetchWeather={this.props.fetchWeather}
