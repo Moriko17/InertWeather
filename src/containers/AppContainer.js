@@ -6,7 +6,6 @@ import {
   fetchWeatherFail
 } from "../store/actions/actions";
 import App from "../components/App";
-import "../styles/styles.css";
 import { getMainCity } from "../store/reducers/weatherReducer";
 
 const fetchWeather = (dispatch, coord, id) => {
@@ -39,7 +38,7 @@ export const fetchWeatherByCoord = () => {
         };
         fetchWeather(dispatch, coord, 0);
       },
-      err => {
+      () => {
         coord = {
           lat: 35.68,
           lon: 139.76
