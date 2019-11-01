@@ -3,7 +3,8 @@ import axios from "axios";
 import {
   fetchWeatherStart,
   fetchWeatherSuccess,
-  fetchWeatherFail
+  fetchWeatherFail,
+  updateState
 } from "../store/actions/actions";
 import App from "../components/App";
 
@@ -53,7 +54,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchWeatherByCoord: () => dispatch(fetchWeatherByCoord())
+  fetchWeatherByCoord: () => dispatch(fetchWeatherByCoord()),
+  updateState: newState => dispatch(updateState(newState))
 });
 
 export default connect(

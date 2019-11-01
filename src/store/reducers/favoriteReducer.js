@@ -7,6 +7,20 @@ export const initialState = {
   }
 };
 
+// export const initialState = JSON.parse(localStorage.getItem("cities"))
+//   ? {
+//       favoriteData: {
+//         cities: [...JSON.parse(localStorage.getItem("cities"))],
+//         lastUsedId: +localStorage.getItem("lastUsedId")
+//       }
+//     }
+//   : {
+//       favoriteData: {
+//         cities: [],
+//         lastUsedId: 0
+//       }
+//     };
+
 export function favoriteReducer(state = initialState.favoriteData, action) {
   let newFavoriteCities = [];
   switch (action.type) {
@@ -80,6 +94,8 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
         ...state,
         cities: newFavoriteCities
       };
+    case actions.UPDATE_STATE:
+      return action.payload.newState;
     default:
       return state;
   }

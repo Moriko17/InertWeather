@@ -40,3 +40,10 @@ export const deleteCity = id => {
     payload: { id }
   };
 };
+
+export const updateState = newState => {
+  return {
+    type: types.UPDATE_STATE,
+    payload: { newState }
+  };
+};
