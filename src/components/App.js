@@ -4,9 +4,11 @@ import CityDegrMainView from "./CityDegrMainView";
 import SideDataMainView from "./SideDataMainView";
 import AddToFavoriteContainer from "../containers/AddToFavoriteContainer";
 import FavoriteListContainer from "../containers/FavoriteListContainer";
+import Loading from "./Loading";
 
 class App extends React.Component {
   componentDidMount() {
+    this.props.fetchWeatherByCoord();
     const newState = JSON.parse(localStorage.getItem("cities"))
       ? {
           cities: [...JSON.parse(localStorage.getItem("cities"))],
@@ -21,22 +23,23 @@ class App extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div>
-        <div>
-          <p>Inert Weather</p>
-          <button onClick={() => this.props.fetchWeatherByCoord()}>+</button>
+      <div className="container">
+        <div className="header">
+          <button onClick={() => this.props.fetchWeatherByCoord()}>
+            Update Geolocation
+          </button>
         </div>
         {Object.keys(this.props.mainCity).length > 1 ? (
           this.props.mainCity.isLoading ? (
-            <p>Loading</p>
+            <Loading />
           ) : (
-            <div>
+            <div className="main-view">
               <CityDegrMainView fetchedData={this.props.mainCity.fetchedData} />
               <SideDataMainView fetchedData={this.props.mainCity.fetchedData} />
             </div>
           )
         ) : (
-          <div>
+          <div className="main-view">
             <CityDegrMainView />
             <SideDataMainView />
           </div>

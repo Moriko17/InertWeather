@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
+import Loading from "./Loading";
+import Error from "./Error";
 
 class FavoriteItem extends React.Component {
   constructor(props) {
@@ -8,21 +10,22 @@ class FavoriteItem extends React.Component {
   }
   render() {
     const { city } = this.props;
+    console.log(this.props);
     return (
-      <div>
-        <div>
+      <div className="favorite-container">
+        <div className="favorite-bar">
           <p>{city.cityName}</p>
-          <p>{city.temp}</p>
+          {city.fetchedData ? <p>{city.fetchedData.temp} °C</p> : <p></p>}
           <button onClick={() => this.props.deleteCity(city.id)}>X</button>
         </div>
         {city.isLoading === true || city.errorMessage !== "" ? (
           city.isLoading ? (
-            <p>Loading</p>
+            <Loading />
           ) : (
-            <p>{city.errorMessage}</p>
+            <Error errorMessage={city.errorMessage} />
           )
         ) : city.fetchedData ? (
-          <div>
+          <div className="favorite-bot">
             <div className="favorite-q">
               <p>Wind:</p>
               <p>Clouds:</p>

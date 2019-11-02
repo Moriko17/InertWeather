@@ -21,7 +21,7 @@
 .city-degr {
   width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   margin-left: 25px;
   margin-right: 25px;
@@ -29,6 +29,11 @@
 
 .city {
   font-size: 4vw;
+}
+
+.weather-pic {
+  width: 20%;
+  align-self: center;
 }
 
 .degr {
@@ -73,7 +78,7 @@
   margin-left: 0;
 }
 
-.fav-form {
+.favorite-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +87,7 @@
   margin-bottom: 0;
 }
 
-.fav-form p {
+.favorite-form p {
   font-size: 3vw;
 }
 
@@ -90,45 +95,44 @@ form input {
   font-size: 2vw;
 }
 
-button {
-  font-size: 2vw;
-  margin: 10px;
-}
-
-.fav-containers {
-  width: 100%;
+.favorite-list {
+  flex-wrap: wrap;
   display: flex;
+  justify-content: space-between;
 }
 
-.fav-container {
+.favorite-container {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  margin: 25px;
   margin-top: 0;
 }
 
-.fav-top {
+.favorite-bar {
   display: flex;
   justify-content: space-between;
   padding: 3px 0 3px 0;
+  margin: 0 25px 0 25px;
 }
 
-.fav-top p {
+.favorite-bar p {
   font-size: 3vw;
 }
 
-.fav-bot {
+.favorite-bot {
   display: flex;
+  margin: 0 25px 0 25px;
   justify-content: space-between;
 }
 
-.fav-bot-q {
+.favorite-q {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.fav-bot-a {
+.favorite-a {
   width: 0%;
   display: flex;
   flex-direction: column;
@@ -136,44 +140,49 @@ button {
   align-items: flex-end;
 }
 
-.fav-bot-q p {
+.favorite-q p {
   background-color: #ccc;
   margin: 3px;
   padding: 3px;
   margin-right: 0;
 }
 
-.fav-bot-a p {
+.favorite-a p {
   background-color: #ccc;
   margin: 3px;
   margin-left: 0;
   padding: 3px;
 }
-.main-city-part {
-  display: flex;
-}
 
 .loading {
   margin: auto;
+  padding: 75px;
 }
 
-.error-main {
-  margin: auto;
+.error {
+  text-align: center;
 }
 
-@media (max-width: 700px) {
+.error p {
+  white-space: normal;
+  font-size: 3vw;
+}
+
+@media (max-width: 600px) {
   .city-degr,
-  .additional,
-  .fav-container {
+  .additional {
     width: 90%;
+  }
+  .favorite-container {
+    width: 100%;
   }
   .main-view {
     flex-direction: column;
   }
-  .fav-containers {
+  .favorite-list {
     flex-direction: column;
   }
-  .fav-form {
+  .favorite-form {
     flex-direction: column;
   }
 }

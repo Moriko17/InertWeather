@@ -11,15 +11,12 @@ class FavoriteList extends React.Component {
       id: city.id,
       cityName: city.cityName
     }));
-    console.log(dataToStorage);
     localStorage.setItem("cities", JSON.stringify(dataToStorage));
     localStorage.setItem("lastUsedId", this.props.favoriteData.lastUsedId);
-    console.log(this.props);
   }
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <div className="favorite-list">
         {this.props.favoriteData.cities.map(city => (
           <FavoriteItem
             key={city.id}

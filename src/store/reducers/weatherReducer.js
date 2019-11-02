@@ -23,7 +23,8 @@ export function weatherReducer(state = initialState.mainCity, action) {
         coord: {
           lat: action.payload.fetchedData.coord.lat,
           lon: action.payload.fetchedData.coord.lon
-        }
+        },
+        icon: action.payload.fetchedData.weather[0].icon
       };
       return {
         ...state,

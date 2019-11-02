@@ -19,6 +19,7 @@ const fetchWeather = (dispatch, coord, id) => {
   return promise
     .then(res => {
       dispatch(fetchWeatherSuccess(res.data, id));
+      console.log(res.data);
       return res.data;
     })
     .catch(error => {

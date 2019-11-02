@@ -21,8 +21,8 @@ class AddToFavorite extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Fav</p>
+      <div className="favorite-form">
+        <p>Favorites:</p>
         <form onSubmit={this.onFormSubmit}>
           <input
             type="text"
