@@ -1,3 +1,4 @@
 # InertWeather  
 		npm i  
-		npm start
+		npm start  
+		npm test
