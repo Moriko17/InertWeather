@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoriteList renders right Renders correctly with many sities 1`] = `
+<div
+  className="favorite-list"
+>
+  <div
+    className="favorite-container"
+  >
+    <div
+      className="favorite-bar"
+    >
+      <p>
+        Marunouchi
+      </p>
+      <p>
+        13.11
+         °C
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="error"
+    >
+      <p>
+        Something goes wrong: 
+      </p>
+    </div>
+  </div>
+  <div
+    className="favorite-container"
+  >
+    <div
+      className="favorite-bar"
+    >
+      <p>
+        Marunouchi
+      </p>
+      <p>
+        13.11
+         °C
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="error"
+    >
+      <p>
+        Something goes wrong: 
+      </p>
+    </div>
+  </div>
+  <div
+    className="favorite-container"
+  >
+    <div
+      className="favorite-bar"
+    >
+      <p>
+        Marunouchi
+      </p>
+      <p>
+        13.11
+         °C
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="error"
+    >
+      <p>
+        Something goes wrong: 
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FavoriteList renders right Renders correctly with one city 1`] = `
+<div
+  className="favorite-list"
+>
+  <div
+    className="favorite-container"
+  >
+    <div
+      className="favorite-bar"
+    >
+      <p>
+        Marunouchi
+      </p>
+      <p>
+        13.11
+         °C
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="error"
+    >
+      <p>
+        Something goes wrong: 
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FavoriteList renders right Renders correctly without cities 1`] = `
+<div
+  className="favorite-list"
+/>
+`;

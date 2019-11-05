@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders right Renders correctly while fetching data 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Update Geolocation
+    </button>
+  </div>
+  <div
+    className="loading"
+  >
+    <div
+      className="css-0"
+    >
+      <div
+        className="css-110do72"
+      />
+      <div
+        className="css-1by9rry"
+      />
+      <div
+        className="css-110do72"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App renders right Renders correctly while w8 for geolocation permissions 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Update Geolocation
+    </button>
+  </div>
+  <div
+    className="main-view"
+  >
+    <div
+      className="city-degr"
+    >
+      <p
+        className="city"
+      >
+        Vostorg
+      </p>
+      <img
+        alt="weather pic"
+        className="weather-pic"
+        src="https://openweathermap.org/img/wn/01n@2x.png"
+      />
+      <p
+        className="degr"
+      >
+        17.3
+         °C
+      </p>
+    </div>
+    <div
+      className="additional"
+    >
+      <div
+        className="main-q"
+      >
+        <p>
+          Wind:
+        </p>
+        <p>
+          Clouds:
+        </p>
+        <p>
+          Pressure:
+        </p>
+        <p>
+          Humidity:
+        </p>
+        <p>
+          Coord:
+        </p>
+      </div>
+      <div
+        className="main-a"
+      >
+        <p>
+          0
+           m/s
+        </p>
+        <p>
+          Nope
+        </p>
+        <p>
+          1138
+           mmHg
+        </p>
+        <p>
+          100
+           %
+        </p>
+        <p>
+          [
+          ??
+          , 
+          ??
+          ]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App renders right Renders correctly with catched error 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Update Geolocation
+    </button>
+  </div>
+  <div
+    className="main-view"
+  >
+    <div
+      className="city-degr"
+    >
+      <p
+        className="city"
+      >
+        Vostorg
+      </p>
+      <img
+        alt="weather pic"
+        className="weather-pic"
+        src="https://openweathermap.org/img/wn/01n@2x.png"
+      />
+      <p
+        className="degr"
+      >
+        17.3
+         °C
+      </p>
+    </div>
+    <div
+      className="additional"
+    >
+      <div
+        className="main-q"
+      >
+        <p>
+          Wind:
+        </p>
+        <p>
+          Clouds:
+        </p>
+        <p>
+          Pressure:
+        </p>
+        <p>
+          Humidity:
+        </p>
+        <p>
+          Coord:
+        </p>
+      </div>
+      <div
+        className="main-a"
+      >
+        <p>
+          0
+           m/s
+        </p>
+        <p>
+          Nope
+        </p>
+        <p>
+          1138
+           mmHg
+        </p>
+        <p>
+          100
+           %
+        </p>
+        <p>
+          [
+          ??
+          , 
+          ??
+          ]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App renders right Renders correctly with fetched data 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Update Geolocation
+    </button>
+  </div>
+  <div
+    className="main-view"
+  >
+    <div
+      className="city-degr"
+    >
+      <p
+        className="city"
+      >
+        Marunouchi
+      </p>
+      <img
+        alt="weather pic"
+        className="weather-pic"
+        src="https://openweathermap.org/img/wn/02n@2x.png"
+      />
+      <p
+        className="degr"
+      >
+        13.11
+         °C
+      </p>
+    </div>
+    <div
+      className="additional"
+    >
+      <div
+        className="main-q"
+      >
+        <p>
+          Wind:
+        </p>
+        <p>
+          Clouds:
+        </p>
+        <p>
+          Pressure:
+        </p>
+        <p>
+          Humidity:
+        </p>
+        <p>
+          Coord:
+        </p>
+      </div>
+      <div
+        className="main-a"
+      >
+        <p>
+          2.6
+           m/s
+        </p>
+        <p>
+          few clouds
+        </p>
+        <p>
+          761
+           mmHg
+        </p>
+        <p>
+          63
+           %
+        </p>
+        <p>
+          [
+          35.68
+          , 
+          139.76
+          ]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

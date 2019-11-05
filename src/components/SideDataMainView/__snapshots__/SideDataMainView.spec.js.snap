@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideDataMainView renders right Renders correctly with no data 1`] = `
+<div
+  className="additional"
+>
+  <div
+    className="main-q"
+  >
+    <p>
+      Wind:
+    </p>
+    <p>
+      Clouds:
+    </p>
+    <p>
+      Pressure:
+    </p>
+    <p>
+      Humidity:
+    </p>
+    <p>
+      Coord:
+    </p>
+  </div>
+  <div
+    className="main-a"
+  >
+    <p>
+      0
+       m/s
+    </p>
+    <p>
+      Nope
+    </p>
+    <p>
+      1138
+       mmHg
+    </p>
+    <p>
+      100
+       %
+    </p>
+    <p>
+      [
+      ??
+      , 
+      ??
+      ]
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SideDataMainView renders right Renders correctly with passed data 1`] = `
+<div
+  className="additional"
+>
+  <div
+    className="main-q"
+  >
+    <p>
+      Wind:
+    </p>
+    <p>
+      Clouds:
+    </p>
+    <p>
+      Pressure:
+    </p>
+    <p>
+      Humidity:
+    </p>
+    <p>
+      Coord:
+    </p>
+  </div>
+  <div
+    className="main-a"
+  >
+    <p>
+      2.6
+       m/s
+    </p>
+    <p>
+      few clouds
+    </p>
+    <p>
+      761
+       mmHg
+    </p>
+    <p>
+      63
+       %
+    </p>
+    <p>
+      [
+      35.68
+      , 
+      139.76
+      ]
+    </p>
+  </div>
+</div>
+`;

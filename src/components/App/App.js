@@ -1,10 +1,8 @@
 import React from "react";
-import "../styles/styles.css";
-import CityDegrMainView from "./CityDegrMainView";
-import SideDataMainView from "./SideDataMainView";
-import AddToFavoriteContainer from "../containers/AddToFavoriteContainer";
-import FavoriteListContainer from "../containers/FavoriteListContainer";
-import Loading from "./Loading";
+import "../../styles/styles.css";
+import CityDegrMainView from "../CityDegrMainView/CityDegrMainView";
+import SideDataMainView from "../SideDataMainView/SideDataMainView";
+import Loading from "../Loading/Loading";
 
 class App extends React.Component {
   componentDidMount() {
@@ -21,7 +19,6 @@ class App extends React.Component {
     this.props.updateState(newState);
   }
   render() {
-    console.log(this.props);
     return (
       <div className="container">
         <div className="header">
@@ -44,8 +41,6 @@ class App extends React.Component {
             <SideDataMainView />
           </div>
         )}
-        <AddToFavoriteContainer />
-        <FavoriteListContainer />
       </div>
     );
   }

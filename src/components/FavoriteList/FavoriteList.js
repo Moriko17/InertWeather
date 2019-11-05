@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/styles.css";
-import FavoriteItem from "./FavoriteItem";
+import "../../styles/styles.css";
+import FavoriteItem from "../FavoriteItem/FavoriteItem";
 
 class FavoriteList extends React.Component {
   componentDidUpdate() {

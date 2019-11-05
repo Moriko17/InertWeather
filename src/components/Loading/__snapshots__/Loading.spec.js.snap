@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders right Renders correctly 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="css-0"
+  >
+    <div
+      className="css-110do72"
+    />
+    <div
+      className="css-1by9rry"
+    />
+    <div
+      className="css-110do72"
+    />
+  </div>
+</div>
+`;

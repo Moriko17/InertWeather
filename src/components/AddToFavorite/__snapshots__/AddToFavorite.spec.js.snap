@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToFavorite renders right Renders correctly 1`] = `
+<div
+  className="favorite-form"
+>
+  <p>
+    Favorites:
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      =
+    </button>
+  </form>
+</div>
+`;

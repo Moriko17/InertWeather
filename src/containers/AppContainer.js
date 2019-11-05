@@ -6,7 +6,7 @@ import {
   fetchWeatherFail,
   updateState
 } from "../store/actions/actions";
-import App from "../components/App";
+import App from "../components/App/App";
 
 const fetchWeather = (dispatch, coord, id) => {
   const API_KEY = "6f49e4f6bef37c3172dac3cae65a0ae6";
@@ -19,7 +19,6 @@ const fetchWeather = (dispatch, coord, id) => {
   return promise
     .then(res => {
       dispatch(fetchWeatherSuccess(res.data, id));
-      console.log(res.data);
       return res.data;
     })
     .catch(error => {
