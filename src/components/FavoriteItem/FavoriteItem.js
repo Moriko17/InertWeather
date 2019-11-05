@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/styles.css";
-import Loading from "./Loading";
-import Error from "./Error";
+import "../../styles/styles.css";
+import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 
 class FavoriteItem extends React.Component {
   constructor(props) {

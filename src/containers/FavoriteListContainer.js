@@ -6,7 +6,7 @@ import {
   deleteCity
 } from "../store/actions/actions";
 import axios from "axios";
-import FavoriteList from "../components/FavoriteList";
+import FavoriteList from "../components/FavoriteList/FavoriteList";
 
 export const fetchWeather = (cityName, id) => {
   return dispatch => {

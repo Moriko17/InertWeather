@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { addCity } from "../store/actions/actions";
-import AddToFavorite from "../components/AddToFavorite";
+import AddToFavorite from "../components/AddToFavorite/AddToFavorite";
 
 const mapStateToProps = state => ({
   favoriteData: state.favoriteWeather

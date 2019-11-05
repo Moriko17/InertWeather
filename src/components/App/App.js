@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/styles.css";
-import CityDegrMainView from "./CityDegrMainView";
-import SideDataMainView from "./SideDataMainView";
-import AddToFavoriteContainer from "../containers/AddToFavoriteContainer";
-import FavoriteListContainer from "../containers/FavoriteListContainer";
-import Loading from "./Loading";
+import "../../styles/styles.css";
+import CityDegrMainView from "../CityDegrMainView/CityDegrMainView";
+import SideDataMainView from "../SideDataMainView/SideDataMainView";
+import AddToFavoriteContainer from "../../containers/AddToFavoriteContainer";
+import FavoriteListContainer from "../../containers/FavoriteListContainer";
+import Loading from "../Loading/Loading";
 
 class App extends React.Component {
   componentDidMount() {
