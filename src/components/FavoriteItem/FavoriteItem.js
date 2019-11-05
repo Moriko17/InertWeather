@@ -10,7 +10,6 @@ class FavoriteItem extends React.Component {
   }
   render() {
     const { city } = this.props;
-    console.log(this.props);
     return (
       <div className="favorite-container">
         <div className="favorite-bar">

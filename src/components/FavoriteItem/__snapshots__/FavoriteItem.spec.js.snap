@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToFavorite renders right Renders correctly while loading 1`] = `
+<div
+  className="favorite-container"
+>
+  <div
+    className="favorite-bar"
+  >
+    <p>
+      Marunouchi
+    </p>
+    <p />
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="loading"
+  >
+    <div
+      className="css-0"
+    >
+      <div
+        className="css-110do72"
+      />
+      <div
+        className="css-1by9rry"
+      />
+      <div
+        className="css-110do72"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AddToFavorite renders right Renders correctly with error catched 1`] = `
+<div
+  className="favorite-container"
+>
+  <div
+    className="favorite-bar"
+  >
+    <p>
+      12
+    </p>
+    <p />
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="error"
+  >
+    <p>
+      Something goes wrong: 
+      404
+    </p>
+  </div>
+</div>
+`;
+
+exports[`AddToFavorite renders right Renders correctly with fetched data 1`] = `
+<div
+  className="favorite-container"
+>
+  <div
+    className="favorite-bar"
+  >
+    <p>
+      Marunouchi
+    </p>
+    <p>
+      13.11
+       °C
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="error"
+  >
+    <p>
+      Something goes wrong: 
+    </p>
+  </div>
+</div>
+`;

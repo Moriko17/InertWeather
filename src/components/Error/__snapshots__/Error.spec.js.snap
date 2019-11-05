@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToFavorite renders right Renders correctly 1`] = `
+<div
+  className="error"
+>
+  <p>
+    Something goes wrong: 
+    404
+  </p>
+</div>
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityDegrMainView renders right Renders correctly with no data 1`] = `
+<div
+  className="city-degr"
+>
+  <p
+    className="city"
+  >
+    Vostorg
+  </p>
+  <img
+    alt="weather pic"
+    className="weather-pic"
+    src="https://openweathermap.org/img/wn/01n@2x.png"
+  />
+  <p
+    className="degr"
+  >
+    17.3
+     °C
+  </p>
+</div>
+`;
+
+exports[`CityDegrMainView renders right Renders correctly with passed data 1`] = `
+<div
+  className="city-degr"
+>
+  <p
+    className="city"
+  >
+    Paris
+  </p>
+  <img
+    alt="weather pic"
+    className="weather-pic"
+    src="https://openweathermap.org/img/wn/01n@2x.png"
+  />
+  <p
+    className="degr"
+  >
+    17.3
+     °C
+  </p>
+</div>
+`;
