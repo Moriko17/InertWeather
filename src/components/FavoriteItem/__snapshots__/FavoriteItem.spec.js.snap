@@ -86,11 +86,53 @@ exports[`AddToFavorite renders right Renders correctly with fetched data 1`] = `
     </button>
   </div>
   <div
-    className="error"
+    className="favorite-bot"
   >
-    <p>
-      Something goes wrong: 
-    </p>
+    <div
+      className="favorite-q"
+    >
+      <p>
+        Wind:
+      </p>
+      <p>
+        Clouds:
+      </p>
+      <p>
+        Pressure:
+      </p>
+      <p>
+        Humidity:
+      </p>
+      <p>
+        Coord:
+      </p>
+    </div>
+    <div
+      className="favorite-a"
+    >
+      <p>
+        2.6
+         m/s
+      </p>
+      <p>
+        few clouds
+      </p>
+      <p>
+        761
+         mmHg
+      </p>
+      <p>
+        63
+         %
+      </p>
+      <p>
+        [
+        35.68
+        , 
+        139.76
+        ]
+      </p>
+    </div>
   </div>
 </div>
 `;

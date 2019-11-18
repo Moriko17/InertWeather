@@ -12,7 +12,7 @@ describe("AddToFavorite renders right", () => {
 
   const filledCity = {
     cityName: "Marunouchi",
-    erroeMessage: "",
+    errorMessage: "",
     isLoading: false,
     fetchedData: {
       cityName: "Marunouchi",
@@ -31,7 +31,7 @@ describe("AddToFavorite renders right", () => {
 
   const loadingCity = {
     cityName: "Marunouchi",
-    erroeMessage: "",
+    errorMessage: "",
     isLoading: true,
     id: 60
   };

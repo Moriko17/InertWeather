@@ -4,7 +4,7 @@ import App from "./App";
 
 describe("App renders right", () => {
   const filledMainCity = {
-    erroeMessage: "",
+    errorMessage: "",
     isLoading: false,
     fetchedData: {
       cityName: "Marunouchi",
@@ -23,13 +23,13 @@ describe("App renders right", () => {
   };
 
   const loadingMainCity = {
-    erroeMessage: "",
+    errorMessage: "",
     isLoading: true,
     id: 0
   };
 
   const errorMainCity = {
-    erroeMessage: 404,
+    errorMessage: 404,
     isLoading: false,
     id: 0
   };

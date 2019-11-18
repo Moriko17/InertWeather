@@ -7,7 +7,7 @@ describe("FavoriteList renders right", () => {
     cities: [
       {
         cityName: "Marunouchi",
-        erroeMessage: "",
+        errorMessage: "",
         isLoading: false,
         fetchedData: {
           cityName: "Marunouchi",
@@ -31,7 +31,7 @@ describe("FavoriteList renders right", () => {
     cities: [
       {
         cityName: "Marunouchi",
-        erroeMessage: "",
+        errorMessage: "",
         isLoading: false,
         fetchedData: {
           cityName: "Marunouchi",
@@ -49,7 +49,7 @@ describe("FavoriteList renders right", () => {
       },
       {
         cityName: "Marunouchi",
-        erroeMessage: "",
+        errorMessage: "",
         isLoading: false,
         fetchedData: {
           cityName: "Marunouchi",
@@ -67,7 +67,7 @@ describe("FavoriteList renders right", () => {
       },
       {
         cityName: "Marunouchi",
-        erroeMessage: "",
+        errorMessage: "",
         isLoading: false,
         fetchedData: {
           cityName: "Marunouchi",
