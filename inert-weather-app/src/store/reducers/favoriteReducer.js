@@ -58,6 +58,13 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
         cities: newFavoriteCities
       };
     case actions.ADD_FAVORITE_CITY:
+      const unic = city =>
+        city.cityName.toLowerCase() === action.payload.cityName.toLowerCase();
+      console.log(state.cities.some(unic));
+      if (state.cities.some(unic))
+        return {
+          ...state
+        };
       newFavoriteCities = [
         ...state.cities,
         {
