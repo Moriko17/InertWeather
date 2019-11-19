@@ -21,6 +21,7 @@ export function favoriteReducer(state = initialState.favoriteData, action) {
         cities: newFavoriteCities
       };
     case actions.FETCH_FAVORITE_WEATHER_SUCCESS: {
+      console.log(action.payload);
       const fetchedData = {
         cityName: action.payload.fetchedData.name,
         temp: action.payload.fetchedData.main.temp,

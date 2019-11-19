@@ -5,7 +5,10 @@ const weatherRouter = express.Router();
 
 weatherRouter.get("/", async (req, res) => {
   const cityName = req.query.city;
-  res.json(await fetchWeatherByCity(cityName));
+  const response = await fetchWeatherByCity(cityName);
+  response.errorMessage
+    ? res.status(response.errorMessage).send("Oh, no")
+    : res.json(response);
 });
 
 weatherRouter.get("/coordinates", async (req, res) => {
