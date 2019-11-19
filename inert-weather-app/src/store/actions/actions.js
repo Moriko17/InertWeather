@@ -24,7 +24,7 @@ export const fetchWeatherFail = (error, id) =>
       }
     : {
         type: types.FETCH_FAVORITE_WEATHER_FAIL,
-        payload: { errorCode: error.response.status, id }
+        payload: { errorCode: error, id }
       };
 
 export const addCity = cityName => {

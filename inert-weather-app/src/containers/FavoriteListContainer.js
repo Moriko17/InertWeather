@@ -23,7 +23,9 @@ export const fetchWeather = (cityName, id) => {
         return res.data;
       })
       .catch(error => {
-        dispatch(fetchWeatherFail(error, id));
+        let err;
+        err = error.response ? error.response.status : 503;
+        dispatch(fetchWeatherFail(err, id));
         return error;
       });
   };
