@@ -15,7 +15,14 @@ class FavoriteItem extends React.Component {
         <div className="favorite-bar">
           <p>{city.cityName}</p>
           {city.fetchedData ? <p>{city.fetchedData.temp} °C</p> : <p></p>}
-          <button onClick={() => this.props.deleteCity(city.id)}>X</button>
+          <button
+            onClick={() => {
+              this.props.deleteCityOnSrv(city.cityName);
+              this.props.deleteCity(city.id);
+            }}
+          >
+            X
+          </button>
         </div>
         {city.isLoading === true || city.errorMessage !== "" ? (
           city.isLoading ? (

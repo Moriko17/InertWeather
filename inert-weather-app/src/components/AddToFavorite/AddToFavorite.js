@@ -11,7 +11,11 @@ class AddToFavorite extends React.Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    this.props.addCity(this.state.term);
+    const unic = city => city.cityName.toLowerCase() === this.state.term;
+    if (!this.props.favoriteData.cities.some(unic)) {
+      this.props.addCity(this.state.term);
+      this.props.postCity(this.state.term);
+    }
     this.setState({ term: "" });
   }
 

@@ -7,16 +7,6 @@ import Loading from "../Loading/Loading";
 class App extends React.Component {
   componentDidMount() {
     this.props.fetchWeatherByCoord();
-    const newState = JSON.parse(localStorage.getItem("cities"))
-      ? {
-          cities: [...JSON.parse(localStorage.getItem("cities"))],
-          lastUsedId: +localStorage.getItem("lastUsedId")
-        }
-      : {
-          cities: [],
-          lastUsedId: 0
-        };
-    this.props.updateState(newState);
   }
   render() {
     return (

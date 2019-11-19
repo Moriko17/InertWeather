@@ -9,10 +9,9 @@ import {
 import App from "../components/App/App";
 
 const fetchWeather = (dispatch, coord, id) => {
-  const API_KEY = "6f49e4f6bef37c3172dac3cae65a0ae6";
-  const ROOT_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric`;
+  const ROOT_URL = "http://localhost:3030/weather/coordinates";
   const promise = axios({
-    url: `${ROOT_URL}&lat=${coord.lat}&lon=${coord.lon}`,
+    url: `${ROOT_URL}?lat=${coord.lat}&lon=${coord.lon}`,
     method: "get"
   });
   dispatch(fetchWeatherStart(id));
@@ -58,7 +57,4 @@ const mapDispatchToProps = dispatch => ({
   updateState: newState => dispatch(updateState(newState))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
