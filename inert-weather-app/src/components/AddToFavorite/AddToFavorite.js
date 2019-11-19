@@ -15,6 +15,7 @@ class AddToFavorite extends React.Component {
     console.log(this.props.favoriteData.cities.some(unic));
     if (!this.props.favoriteData.cities.some(unic)) {
       this.props.addCity(this.state.term);
+      this.props.postCity(this.state.term);
     }
     this.setState({ term: "" });
   }

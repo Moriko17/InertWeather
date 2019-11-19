@@ -28,8 +28,24 @@ export const fetchWeather = (cityName, id) => {
   };
 };
 
+export const deleteCityOnSrv = cityName => {
+  const ROOT_URL = "http://localhost:3030/favorites";
+  try {
+    axios({
+      url: `${ROOT_URL}`,
+      method: "delete",
+      data: {
+        cityName: cityName
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const mapStateToProps = state => ({
-  favoriteData: state.favoriteWeather
+  favoriteData: state.favoriteWeather,
+  deleteCityOnSrv: cityName => deleteCityOnSrv(cityName)
 });
 
 const mapDispatchToProps = dispatch => ({

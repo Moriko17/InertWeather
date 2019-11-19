@@ -22,6 +22,7 @@ class FavoriteList extends React.Component {
             key={city.id}
             city={city}
             deleteCity={this.props.deleteCity}
+            deleteCityOnSrv={this.props.deleteCityOnSrv}
             fetchWeather={this.props.fetchWeather}
           />
         ))}
