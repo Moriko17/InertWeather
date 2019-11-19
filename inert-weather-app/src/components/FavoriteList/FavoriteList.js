@@ -4,20 +4,25 @@ import FavoriteItem from "../FavoriteItem/FavoriteItem";
 
 class FavoriteList extends React.Component {
   componentDidMount() {
-    this.props.fetchFavoritesList().then(response => {
-      let cities = [];
-      response.data.forEach(city => {
-        cities.push({
-          cityName: city.cityName,
-          id: cities.length + 1
+    this.props
+      .fetchFavoritesList()
+      .then(response => {
+        let cities = [];
+        response.data.forEach(city => {
+          cities.push({
+            cityName: city.cityName,
+            id: cities.length + 1
+          });
         });
+        const newState = {
+          cities: cities,
+          lastUsedId: cities.length + 1
+        };
+        this.props.updateState(newState);
+      })
+      .catch(error => {
+        console.log(error);
       });
-      const newState = {
-        cities: cities,
-        lastUsedId: cities.length + 1
-      };
-      this.props.updateState(newState);
-    });
   }
   render() {
     return (
