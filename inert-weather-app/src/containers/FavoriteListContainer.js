@@ -3,7 +3,8 @@ import {
   fetchWeatherStart,
   fetchWeatherSuccess,
   fetchWeatherFail,
-  deleteCity
+  deleteCity,
+  updateState
 } from "../store/actions/actions";
 import axios from "axios";
 import FavoriteList from "../components/FavoriteList/FavoriteList";
@@ -43,14 +44,25 @@ export const deleteCityOnSrv = cityName => {
   }
 };
 
+export const fetchFavoritesList = () => {
+  const ROOT_URL = "http://localhost:3030/favorites";
+  const promise = axios({
+    url: `${ROOT_URL}`,
+    method: "get"
+  });
+  return promise;
+};
+
 const mapStateToProps = state => ({
   favoriteData: state.favoriteWeather,
-  deleteCityOnSrv: cityName => deleteCityOnSrv(cityName)
+  deleteCityOnSrv: cityName => deleteCityOnSrv(cityName),
+  fetchFavoritesList: () => fetchFavoritesList()
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchWeather: (cityName, id) => dispatch(fetchWeather(cityName, id)),
-  deleteCity: id => dispatch(deleteCity(id))
+  deleteCity: id => dispatch(deleteCity(id)),
+  updateState: newState => dispatch(updateState(newState))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavoriteList);

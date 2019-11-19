@@ -3,16 +3,21 @@ import "../../styles/styles.css";
 import FavoriteItem from "../FavoriteItem/FavoriteItem";
 
 class FavoriteList extends React.Component {
-  componentDidUpdate() {
-    let dataToStorage = this.props.favoriteData.cities.filter(
-      city => city.fetchedData
-    );
-    dataToStorage = dataToStorage.map(city => ({
-      id: city.id,
-      cityName: city.cityName
-    }));
-    localStorage.setItem("cities", JSON.stringify(dataToStorage));
-    localStorage.setItem("lastUsedId", this.props.favoriteData.lastUsedId);
+  componentDidMount() {
+    this.props.fetchFavoritesList().then(response => {
+      let cities = [];
+      response.data.forEach(city => {
+        cities.push({
+          cityName: city.cityName,
+          id: cities.length + 1
+        });
+      });
+      const newState = {
+        cities: cities,
+        lastUsedId: cities.length + 1
+      };
+      this.props.updateState(newState);
+    });
   }
   render() {
     return (
