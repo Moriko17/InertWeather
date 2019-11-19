@@ -9,12 +9,6 @@ import {
 import App from "../components/App/App";
 
 const fetchWeather = (dispatch, coord, id) => {
-  // const API_KEY = "6f49e4f6bef37c3172dac3cae65a0ae6";
-  // const ROOT_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric`;
-  // const promise = axios({
-  // url: `${ROOT_URL}&lat=${coord.lat}&lon=${coord.lon}`,
-  //   method: "get"
-  // });
   const ROOT_URL = "http://localhost:3030/weather/coordinates";
   const promise = axios({
     url: `${ROOT_URL}?lat=${coord.lat}&lon=${coord.lon}`,
@@ -23,12 +17,10 @@ const fetchWeather = (dispatch, coord, id) => {
   dispatch(fetchWeatherStart(id));
   return promise
     .then(res => {
-      console.log(res);
       dispatch(fetchWeatherSuccess(res.data, id));
       return res.data;
     })
     .catch(error => {
-      console.log(error);
       dispatch(fetchWeatherFail(error, id));
       return error;
     });

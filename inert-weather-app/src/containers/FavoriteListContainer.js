@@ -10,10 +10,9 @@ import FavoriteList from "../components/FavoriteList/FavoriteList";
 
 export const fetchWeather = (cityName, id) => {
   return dispatch => {
-    const API_KEY = "6f49e4f6bef37c3172dac3cae65a0ae6";
-    const ROOT_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric`;
+    const ROOT_URL = "http://localhost:3030/weather";
     const promise = axios({
-      url: `${ROOT_URL}&q=${cityName}`,
+      url: `${ROOT_URL}?city=${cityName}`,
       method: "get"
     });
     dispatch(fetchWeatherStart(id));
@@ -38,7 +37,4 @@ const mapDispatchToProps = dispatch => ({
   deleteCity: id => dispatch(deleteCity(id))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FavoriteList);
+export default connect(mapStateToProps, mapDispatchToProps)(FavoriteList);
