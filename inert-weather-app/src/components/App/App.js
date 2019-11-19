@@ -5,6 +5,9 @@ import SideDataMainView from "../SideDataMainView/SideDataMainView";
 import Loading from "../Loading/Loading";
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchWeatherByCoord();
+  }
   render() {
     return (
       <div className="container">
