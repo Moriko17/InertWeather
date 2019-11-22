@@ -32,6 +32,7 @@ class AddToFavorite extends React.Component {
             type="text"
             value={this.state.term}
             onChange={this.onInputChange}
+            required
           />
           <button type="submit">=</button>
         </form>
