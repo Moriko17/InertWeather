@@ -1,17 +1,19 @@
 # InertWeather  
 The worst weather application you've ever seen.
 ## How to ...  
-### Install  
-Run  
+Should be executed in service / app dirs respectively.  
+
+### Install Server / App  
+Run   
 
     npm i 
     
-### Compile  
+### Compile Server / App  
 Run  
 
     npm start
   
-### Test  
+### Test App  
 Run  
 
     npm test  
